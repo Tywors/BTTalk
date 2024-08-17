@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -43,8 +46,17 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    //tronSdk
     implementation(project(":tronsdk"))
+    //coroutines
     implementation(libs.kotlinx.coroutines.rx2)
+    //koin
+    implementation (libs.koin.android)
+    //room
+    implementation (libs.androidx.room.ktx)
+    //retrofit
+    implementation (libs.retrofit2.retrofit)
+    implementation (libs.retrofit2.converter.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -2,7 +2,7 @@
 agp = "8.5.2"
 converterGson = "2.9.0"
 koinAndroid = "3.3.2"
-kotlin = "1.9.20"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -17,6 +17,7 @@ patternLockVersion = "0.2.0"
 patternlockview = "1.0.0"
 retrofitVersion = "2.9.0"
 roomKtx = "2.6.1"
+ksp = "2.0.0-1.0.21"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,5 +42,5 @@ retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref =
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version = "2.0.10" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

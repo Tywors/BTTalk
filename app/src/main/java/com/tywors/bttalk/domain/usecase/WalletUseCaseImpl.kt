@@ -20,6 +20,7 @@ class WalletUseCaseImpl(
 
         return walletDao.insertNewWallet(
             WalletEntity(
+                id = 1,
                 address = walletAddress,
                 password = password,
                 privateKey = walletPrivateKey

@@ -10,7 +10,7 @@ import com.tywors.bttalk.repository.room.entities.WalletEntity
     entities = [
         WalletEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 

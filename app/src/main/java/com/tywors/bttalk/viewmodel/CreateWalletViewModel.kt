@@ -1,6 +1,7 @@
 package com.tywors.bttalk.viewmodel
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.viewModelScope
 import com.tywors.bttalk.domain.usecase.WalletUseCase
@@ -46,7 +47,7 @@ class CreateWalletViewModel(
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val result = walletUseCase.createWallet(firstPattern.toString())
-                Toast.makeText(context, result.toString(), Toast.LENGTH_LONG).show()
+                Log.d("xxx", result.toString())
             }
         }
     }

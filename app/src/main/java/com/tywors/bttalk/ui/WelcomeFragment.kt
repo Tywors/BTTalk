@@ -29,4 +29,8 @@ class WelcomeFragment: BaseFragment<FragmentWelcomeBinding, WelcomeViewModel>(
             vModel.navigateTo(R.id.action_welcomeFragment_to_createWalletFragment)
         }
     }
+
+    override fun setupFlows() {
+
+    }
 }

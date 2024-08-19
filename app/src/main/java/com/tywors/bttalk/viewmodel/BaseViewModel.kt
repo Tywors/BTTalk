@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
 open class BaseViewModel(
-    context: Application,
+    val context: Application,
 ) : ViewModel() {
 
     private val _navigationFlow = MutableSharedFlow<Int>()

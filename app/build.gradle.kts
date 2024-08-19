@@ -54,12 +54,15 @@ dependencies {
     implementation (libs.koin.android)
     //room
     implementation (libs.androidx.room.ktx)
+    //kapt (libs.androidx.room.compiler)
     //retrofit
     implementation (libs.retrofit2.retrofit)
     implementation (libs.retrofit2.converter.gson)
     //Navigation
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
+    //Pattern password
+    implementation (libs.itsxtt.pattern.lock)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

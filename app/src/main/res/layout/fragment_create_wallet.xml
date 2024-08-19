@@ -10,6 +10,7 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,8 +21,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Creating Wallet"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/prCreatingWallet"
         android:layout_marginTop="20dp"/>
+
+
+
+    <com.itsxtt.patternlock.PatternLockView
+        android:id="@+id/patternLockView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"/>
+
+    <ImageView
+        android:id="@+id/imCreatePassword"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCreatePassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_key_24" />
+
+    <TextView
+        android:id="@+id/tvCreatePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create a Password"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/patternLockView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

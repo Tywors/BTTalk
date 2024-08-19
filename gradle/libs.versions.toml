@@ -1,18 +1,20 @@
 [versions]
-agp = "8.5.1"
+agp = "8.5.2"
 converterGson = "2.9.0"
 koinAndroid = "3.3.2"
-kotlin = "1.9.0"
+kotlin = "1.9.20"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
-kotlinxCoroutinesRx2 = "1.6.4"
+kotlinxCoroutinesRx2 = "1.7.1"
 material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
 navigationFragmentKtx = "2.7.7"
+patternLockVersion = "0.2.0"
+patternlockview = "1.0.0"
 retrofitVersion = "2.9.0"
 roomKtx = "2.6.1"
 
@@ -20,7 +22,9 @@ roomKtx = "2.6.1"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+itsxtt-pattern-lock = { module = "io.github.itsxtt:pattern-lock", version.ref = "patternLockVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -30,10 +34,12 @@ kotlinx-coroutines-rx2 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-rx
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+patternlockview = { module = "com.andrognito.patternlockview:patternlockview", version.ref = "patternlockview" }
 retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version = "2.0.10" }
 

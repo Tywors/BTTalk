@@ -1,6 +1,8 @@
 package com.tywors.bttalk
 
 import android.app.Application
+import com.tywors.bttalk.domain.di.domainModule
+import com.tywors.bttalk.repository.room.di.roomModule
 import com.tywors.bttalk.viewmodel.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -15,7 +17,9 @@ class App : Application() {
             androidLogger(Level.ERROR)
             androidContext(this@App)
             modules (
-                viewModelModule
+                viewModelModule,
+                domainModule,
+                roomModule,
             )
         }
     }

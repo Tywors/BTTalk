@@ -29,6 +29,7 @@ abstract class BaseFragment<VBinding : ViewBinding, VModel : BaseViewModel>(
 
     abstract fun setupComponents()
     abstract fun setupFlows()
+    abstract fun initViewModel()
 
     final override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,7 @@ abstract class BaseFragment<VBinding : ViewBinding, VModel : BaseViewModel>(
         savedInstanceState: Bundle?
     ): View? {
         vBinding = getViewBinding()
+        setupFlows()
         return vBinding.root
     }
 
@@ -49,7 +51,7 @@ abstract class BaseFragment<VBinding : ViewBinding, VModel : BaseViewModel>(
         super.onViewCreated(view, savedInstanceState)
         initOwnObservers()
         setupComponents()
-        setupFlows()
+        initViewModel()
     }
 
     override fun onAttach(context: Context) {

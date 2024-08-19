@@ -2,7 +2,6 @@ package com.tywors.bttalk.viewmodel
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.viewModelScope
 import com.tywors.bttalk.domain.usecase.WalletUseCase
 import kotlinx.coroutines.Dispatchers
@@ -16,8 +15,13 @@ class CreateWalletViewModel(
     context: Application
 ): BaseViewModel(context) {
 
+    private val TAG = "CreateWalletViewModel"
+
     private val _passwordFlow = MutableSharedFlow<Boolean>()
     val passwordFlow = _passwordFlow.asSharedFlow()
+
+    private val _walletCreated = MutableSharedFlow<Boolean>()
+    val walletCreated = _walletCreated.asSharedFlow()
 
     var firstPattern: ArrayList<Int>? = null
     private var passwordCreated: Boolean = false
@@ -47,7 +51,8 @@ class CreateWalletViewModel(
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val result = walletUseCase.createWallet(firstPattern.toString())
-                Log.d("xxx", result.toString())
+                Log.d(TAG, "Created new wallet: $result")
+                _walletCreated.emit(result > 0)
             }
         }
     }

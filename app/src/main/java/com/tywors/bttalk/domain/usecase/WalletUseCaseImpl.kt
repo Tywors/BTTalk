@@ -27,4 +27,8 @@ class WalletUseCaseImpl(
             )
         )
     }
+
+    override suspend fun loadAddressWallet(): String? {
+        return walletDao.getAddressWallet()
+    }
 }

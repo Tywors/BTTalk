@@ -1,4 +1,4 @@
-package com.tywors.bttalk.ui
+package com.tywors.bttalk.ui.screen
 
 import android.view.View
 import androidx.lifecycle.Lifecycle
@@ -7,6 +7,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.itsxtt.patternlock.PatternLockView
 import com.tywors.bttalk.R
 import com.tywors.bttalk.databinding.FragmentCreateWalletBinding
+import com.tywors.bttalk.ui.BaseFragment
 import com.tywors.bttalk.viewmodel.CreateWalletViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -65,8 +66,20 @@ class CreateWalletFragment: BaseFragment<FragmentCreateWalletBinding, CreateWall
                         }
                     }
                 }
+
+                launch {
+                    vModel.walletCreated.collect {
+                        if (it) {
+                            iMainActivity.navigateTo(R.id.action_createWalletFragment_to_homeFragment)
+                        }
+                    }
+                }
             }
         }
+    }
+
+    override fun initViewModel() {
+
     }
 
 }

@@ -5,25 +5,28 @@ import androidx.lifecycle.viewModelScope
 import com.tywors.bttalk.domain.usecase.WalletUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HomeViewModel(
+class SplashViewModel(
     private val walletUseCase: WalletUseCase,
     context: Application,
 ): BaseViewModel(context) {
 
-    private val _loadAddressFlow = MutableSharedFlow<Pair<Boolean, String>>()
-    val loadAddressFlow = _loadAddressFlow.asSharedFlow()
+    private val _haveWalletFlow = MutableSharedFlow<Boolean>()
+    val haveWalletFlow = _haveWalletFlow.asSharedFlow()
 
-    fun loadAddressWallet() {
+    fun checkIfHaveWallet() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val address = walletUseCase.loadAddressWallet()
-                _loadAddressFlow.emit(Pair(address != "", address))
+                val loadedAddress = walletUseCase.loadAddressWallet()
+
+                _haveWalletFlow.emit(
+                    loadedAddress != null && loadedAddress != ""
+                )
             }
         }
     }
-
 }

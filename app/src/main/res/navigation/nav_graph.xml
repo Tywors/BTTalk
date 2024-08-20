@@ -27,7 +27,11 @@
         android:id="@+id/homeFragment"
         android:name="com.tywors.bttalk.ui.screen.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.tywors.bttalk.ui.screen.SplashFragment"
@@ -40,4 +44,9 @@
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.tywors.bttalk.ui.screen.AddContactFragment"
+        android:label="AddContactFragment"
+        tools:layout="@layout/fragment_add_contact"/>
 </navigation>

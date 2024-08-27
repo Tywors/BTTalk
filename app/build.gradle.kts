@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -33,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -43,8 +47,23 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    //tronSdk
     implementation(project(":tronsdk"))
+    //coroutines
     implementation(libs.kotlinx.coroutines.rx2)
+    //koin
+    implementation (libs.koin.android)
+    //room
+    implementation (libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    //retrofit
+    implementation (libs.retrofit2.retrofit)
+    implementation (libs.retrofit2.converter.gson)
+    //Navigation
+    implementation (libs.androidx.navigation.fragment.ktx)
+    implementation (libs.androidx.navigation.ui.ktx)
+    //Pattern password
+    implementation (libs.itsxtt.pattern.lock)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
